@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+logtime.py -f $1 -l 'state entered|state exited|tpvkeys|transientcontrol: videomute|displaypower|splash'
