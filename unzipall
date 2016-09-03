@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for f in `ls *.zip`
+do
+    7z x $f
+    rm $f
+done

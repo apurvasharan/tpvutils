@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+
+import os
+
+REASONS = ["RC Key", "LKB Key",  "Alarm", "CEC", "WOWLAN", "WOLAN", "Cold Boot", "CrashBoot", "Recovery"]
+
+for d in os.listdir (os.getcwd()):
+    if d.startswith ("Boot_") and os.path.isdir(d):
+        found = False
+        for reason in REASONS:
+            if os.path.exists ("%s/%s.txt" % (d, reason)):
+                print "%s : Wakeup Reason = %s" % (d, reason)
+                found = True
+                break
+        if found == False:
+                print "%s : Wakeup Reason = No wakeup reason found" % (d)
